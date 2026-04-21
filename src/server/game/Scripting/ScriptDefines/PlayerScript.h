@@ -221,48 +221,63 @@ protected:
 
 public:
     // Called when a player dies
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerJustDied(Player* /*player*/) { }
 
     // Called player talent points are calculated
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerCalculateTalentsPoints(Player const* /*player*/, uint32& /*talentPointsForLevel*/) { }
 
     // Called when clicking the release button
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerReleasedGhost(Player* /*player*/) { }
 
     // Called on Send Initial Packets Before Add To Map
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerSendInitialPacketsBeforeAddToMap(Player* /*player*/, WorldPacket& /*data*/) {}
 
     // Called when a player does a desertion action (see BattlegroundDesertionType)
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerBattlegroundDesertion(Player* /*player*/, BattlegroundDesertionType const /*desertionType*/) { }
 
     // Called when a player completes a quest
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerCompleteQuest(Player* /*player*/, Quest const* /*quest_id*/) { }
 
     // Called when a player kills another player
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerPVPKill(Player* /*killer*/, Player* /*killed*/) { }
 
     // Called when a player toggles pvp
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerPVPFlagChange(Player* /*player*/, bool /*state*/) { }
 
     // Called when a player kills a creature
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerCreatureKill(Player* /*killer*/, Creature* /*killed*/) { }
 
     // Called when a player's pet kills a creature
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerCreatureKilledByPet(Player* /*PetOwner*/, Creature* /*killed*/) { }
 
     // Called when a player is killed by a creature
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerKilledByCreature(Creature* /*killer*/, Player* /*killed*/) { }
 
     // Called when a player's level changes (right after the level is applied)
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerLevelChanged(Player* /*player*/, uint8 /*oldlevel*/) { }
 
     // Called when a player's free talent points change (right before the change is applied)
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerFreeTalentPointsChanged(Player* /*player*/, uint32 /*points*/) { }
 
     // Called when a player's talent points are reset (right before the reset is done)
+    AC_HOOK_SINCE("1.0.0")
     virtual void OnPlayerTalentsReset(Player* /*player*/, bool /*noCost*/) { }
 
     // Called when a player attempts to put a point in a talent.
+    AC_HOOK_SINCE("1.0.0")
     virtual bool OnPlayerCanLearnTalent(Player* /*player*/, TalentEntry const* /*talent*/, uint32 /*rank*/) { return true; }
 
     // Called after a player switches specs using the dual spec system

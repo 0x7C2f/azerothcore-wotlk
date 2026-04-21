@@ -18,6 +18,23 @@
 #ifndef SC_SCRIPTMGR_H
 #define SC_SCRIPTMGR_H
 
+// ---------------------------------------------------------------------------
+// AzerothCore Script API versioning
+//
+// AC_SCRIPT_API_VERSION follows semantic versioning: MAJOR.MINOR.PATCH
+//   MAJOR — breaking ABI change; all modules must recompile and may need
+//            source changes.
+//   MINOR — new hooks added; existing hooks unchanged; backward compatible.
+//   PATCH — documentation/comment-only changes.
+//
+// Module authors: declare in your module.json (see docs/module_manifest.md):
+//   "ac_api_version": ">=1.0.0"
+// ---------------------------------------------------------------------------
+#define AC_SCRIPT_API_VERSION_MAJOR 1
+#define AC_SCRIPT_API_VERSION_MINOR 0
+#define AC_SCRIPT_API_VERSION_PATCH 0
+#define AC_SCRIPT_API_VERSION "1.0.0"
+
 #include "AchievementMgr.h"
 #include "ArenaTeam.h"
 #include "AuctionHouseMgr.h"
