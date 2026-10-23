@@ -20,6 +20,25 @@
 
 #include "ScriptMgr.h"
 
+// ---------------------------------------------------------------------------
+// Hook lifecycle annotation macros
+//
+// Usage example in a ScriptDefines header:
+//
+//   AC_HOOK_SINCE("1.0.0")
+//   virtual void OnPlayerLogin(Player* player) { }
+//
+//   AC_HOOK_DEPRECATED("1.2.0", "Use OnPlayerCompleteLogin instead")
+//   virtual void OnPlayerOldLogin(Player* player) { }
+//
+// These macros are no-ops at runtime — they exist purely as machine-readable
+// documentation. A future CI lint step can grep for AC_HOOK_SINCE and verify
+// that every public hook has an annotation.
+// ---------------------------------------------------------------------------
+#define AC_HOOK_SINCE(version)  /* introduced in AC Script API version version */
+#define AC_HOOK_DEPRECATED(since_version, replacement) \
+    [[deprecated("Deprecated since AC Script API " since_version ". " replacement)]]
+
 template<typename ScriptName>
 inline Optional<bool> IsValidBoolScript(std::function<bool(ScriptName*)> executeHook)
 {
